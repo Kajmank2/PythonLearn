@@ -1,5 +1,6 @@
 #Predict your age!
 import math
+import json
 import os
 def predict_age(age_1, age_2, age_3, age_4, age_5, age_6, age_7, age_8):
         list =[age_1, age_2, age_3, age_4, age_5, age_6, age_7, age_8]
@@ -44,3 +45,8 @@ def find_longest(arr):
     return max(arr, key=lambda x: len(str(x)))
 print(find_longest([1,400,20,401,11]))
 new_line()
+#MEETING
+s="Alexis:Wahl;John:Bell;Victoria:Schwarz;Abba:Dorny;Grace:Meta;Ann:Arno;Madison:STAN;Alex:Cornwell;Lewis:Kern;Megan:Stan;Alex:Korn"
+def meeting(s):
+    return "".join(sorted(["({}, {})".format(i[1].upper(),i[0].upper())for i in [n.split(":") for n in s.split(";")]]))
+print(meeting(s))

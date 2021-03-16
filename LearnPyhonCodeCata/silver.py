@@ -41,3 +41,32 @@ else:
     """
 new_line()
 
+#Sort Out The Men From Boys
+
+                #My solution
+arr=[20,33,50,34,43,46]
+def men_from_boys(arr):
+    sort=[]
+    sort2=[]
+    for x in (arr):
+        if  x % 2 == 0:
+            sort.append(x)
+            sort.sort()
+        else:
+            sort2.append(x)
+            sort2.sort(reverse=True)
+    arr=sort+sort2
+    arr=list(dict.fromkeys(arr))
+    return arr
+        #best soultion
+''''
+def men_from_boys(arr):
+    men = []
+    boys = []
+    for i in sorted(set(arr)):
+        if i % 2 == 0:
+            men.append(i)
+        else:
+            boys.append(i)
+    return men + boys[::-1]
+'''

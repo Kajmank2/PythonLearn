@@ -2,7 +2,8 @@
 import math
 import json
 import os
-def predict_age(age_1, age_2, age_3, age_4, age_5, age_6, age_7, age_8):
+from collections import Counter
+def predict_age(age_1, age_2, age_3, age_4, age_5, age_6, age_7, age_8): # MY
         list =[age_1, age_2, age_3, age_4, age_5, age_6, age_7, age_8]
         multlist=[x*x for x in list]
         addlist=sum(multlist)
@@ -11,13 +12,13 @@ def predict_age(age_1, age_2, age_3, age_4, age_5, age_6, age_7, age_8):
         return math.floor(devielist)
 #print(predict_age(65,60,75,55,60,63,64,45))
 
-#return sum(a*a for a in age)**0.5//2
+#return sum(a*a for a in age)**0.5//2  # BEST
 ######### https://www.codewars.com/kata/5aff237c578a14752d0035ae/solutions/python #########
 
 def new_line():
     print('\n')
 #REVERSE WORD
-def reverse_words(text):
+def reverse_words(text): #MY
         words =[]
         for word in text.split(' '):
             word_arr =list(word)
@@ -25,9 +26,7 @@ def reverse_words(text):
             words.append(str(''.join(word_arr)))
         return ' '.join(words)
 #print(reverse_words("hello bitch its me"))
-
-#BEST SOLUTION
-#return ' '.join(s[::-1] for s in str.split(' '))
+#return ' '.join(s[::-1] for s in str.split(' '))  #BEST
 
 #BASIC PING
 """"
@@ -45,7 +44,7 @@ new_line()
 
                 #My solution
 arr=[20,33,50,34,43,46]
-def men_from_boys(arr):
+def men_from_boys(arr): # MY
     sort=[]
     sort2=[]
     for x in (arr):
@@ -70,3 +69,50 @@ def men_from_boys(arr):
             boys.append(i)
     return men + boys[::-1]
 '''
+new_line()
+#sum of minimums !
+def sum_of_minimums(numbers):
+    return sum(map(min,numbers))
+print(sum_of_minimums([[67,89,90,56], [11,12,14,54],[7,9,4,3], [9,8,6,7]]))
+
+#Counting Array Elements
+def count(array): # MY
+    con=1
+    diciton={}
+    for x in array:
+        if x in diciton:
+            diciton[x]+=1
+        else:
+            diciton[x]=con
+    return diciton
+#def count(array): #BEST !
+#    return Counter(array)
+print(count(['a', 'a', 'b', 'b', 'b','c']))
+
+new_line()
+#Sorted? yes? no? how?
+arr=[15, 7, 3, -8]
+def is_sorted_and_how(arr): #my soloution
+    asc=[]
+    dsc=[]
+    for x in arr:
+        asc.append(x)
+    for x in arr:
+        dsc.append(x)
+    dsc.sort(reverse=True)
+    asc.sort()
+    if asc==arr:
+        return 'yes, ascending'
+    elif dsc==arr:
+        return 'yes, descending'
+    else:
+        return 'no'
+    '''
+    if arr == sorted(arr):# BEST
+        return 'yes, ascending'
+    elif arr == sorted(arr)[::-1]:
+        return 'yes, descending'
+    else:
+        return 'no'
+        '''
+print(is_sorted_and_how(arr))

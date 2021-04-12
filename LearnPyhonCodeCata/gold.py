@@ -47,3 +47,26 @@ def title_case(title, minor_words=''):
     return ' '.join([word if word in minor_words else word.capitalize() for word in title])
 '''
 print(title_case(title,minor))
+
+#Your order, please
+#MY SOLUTION
+def order(sentence):
+    numb=[1,2,3,4,5,6,7,8,9,0]
+    bejrut = sentence.split(" ")
+    sum=""
+    sum3=""
+    for x in bejrut:
+        for y in numb:
+            if x.find(str(y)) == -1:
+                print("no there") 
+            else:
+                sum += str(y)+x+" "
+    asd=sum.split(" ")
+    del asd[-1]
+    sum2 = sorted(asd, key= lambda x:x[::1])
+    for z in sum2:
+        sum3+=z[1:]+" "
+    return sum3[:-1]
+# BEST ->> def order(sentence):
+#     return " ".join(sorted(sentence.split(), key=lambda x: int(filter(str.isdigit, x))))
+print(order("is2 Thi1s T4est 3a"))

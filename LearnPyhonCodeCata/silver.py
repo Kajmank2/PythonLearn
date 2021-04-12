@@ -115,4 +115,4 @@ def is_sorted_and_how(arr): #my soloution
     else:
         return 'no'
         '''
-print(is_sorted_and_how(arr))
+

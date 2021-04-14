@@ -58,7 +58,7 @@ def order(sentence):
     for x in bejrut:
         for y in numb:
             if x.find(str(y)) == -1:
-                print("no there") 
+                print("no there")
             else:
                 sum += str(y)+x+" "
     asd=sum.split(" ")
@@ -70,3 +70,4 @@ def order(sentence):
 # BEST ->> def order(sentence):
 #     return " ".join(sorted(sentence.split(), key=lambda x: int(filter(str.isdigit, x))))
 print(order("is2 Thi1s T4est 3a"))
+

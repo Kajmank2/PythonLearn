@@ -73,7 +73,7 @@ new_line()
 #sum of minimums !
 def sum_of_minimums(numbers):
     return sum(map(min,numbers))
-print(sum_of_minimums([[67,89,90,56], [11,12,14,54],[7,9,4,3], [9,8,6,7]]))
+#print(sum_of_minimums([[67,89,90,56], [11,12,14,54],[7,9,4,3], [9,8,6,7]]))
 
 #Counting Array Elements
 def count(array): # MY
@@ -87,7 +87,7 @@ def count(array): # MY
     return diciton
 #def count(array): #BEST !
 #    return Counter(array)
-print(count(['a', 'a', 'b', 'b', 'b','c']))
+#print(count(['a', 'a', 'b', 'b', 'b','c']))
 
 new_line()
 #Sorted? yes? no? how?
@@ -115,4 +115,51 @@ def is_sorted_and_how(arr): #my soloution
     else:
         return 'no'
         '''
+
+#Functional addition
+def add(n):
+        return lambda x: x + n
+#make a function that does arithmetic!
+def arithmetic(a, b, operator):
+  if( operator=="add" ):
+      return a+b
+  elif  (operator=="subtract"):
+     return a-b
+  elif(operator=="multiply"):
+      return a*b
+  else:
+      return a/b
+''' BEST SOLUTION
+from operator import add, mul, sub, truediv
+def arithmetic(a, b, operator):
+    ops = {'add': add, 'subtract': sub, 'multiply': mul, 'divide': truediv}
+    return ops[operator](a, b)
+'''
+#print(arithmetic(2,3,"add"))
+
+
+#Return the first M multiples of N
+def multiples(m, n):
+    i=1
+    tab=[]
+    while m>=i:
+        tab.append(n*i)
+        i=i+1
+    return tab
+#print(multiples(3,5))
+#best
+#return [i * n for i in range(1, m + 1)]
+
+#List Filtering
+def filter_list(l):
+    lst_nmber = [x for x in l if type(x).__name__=="int" or type(x).__name__=="float"]
+    return lst_nmber
+#print(filter_list([2,1,"a","b"]))
+
+#Sum of two lowest positive integers
+def sum_two_smallest_numbers(numbers):
+    tab=numbers
+    tab.sort()
+    return tab[0]+tab[1]
+print(sum_two_smallest_numbers([1,2,56,23,4]))
 

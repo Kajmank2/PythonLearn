@@ -163,3 +163,5 @@ def sum_two_smallest_numbers(numbers):
     return tab[0]+tab[1]
 print(sum_two_smallest_numbers([1,2,56,23,4]))
 
+
+

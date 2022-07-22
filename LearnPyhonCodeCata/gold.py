@@ -143,3 +143,10 @@ print(kebabize('myCamelCasedString'))
 def kebabize(s):
     return ''.join(c if c.islower() else '-' + c.lower() for c in s if c.isalpha()).strip('-')
 '''''
+#Round by 0.5 steps
+def solution(n):
+    def truncate(n,decimals=0):
+        multiplier = 10 ** decimals
+        return int(n*multiplier)/multiplier
+    return truncate(n)
+print(solution(4.25))
